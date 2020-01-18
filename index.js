@@ -26,10 +26,6 @@ let questions = [
 ]
 
 
-// function writeToFile(fileName, data) {
- 
-// } not necessary with electron-html-to
-
 function init() {
     inquirer
     .prompt(questions)
@@ -39,7 +35,6 @@ function init() {
         axios
             .get(queryUrl)
             .then((res) => {    
-                // console.log(res.data)
 
                 
 
@@ -57,7 +52,6 @@ function init() {
                         data.color = 3;
                         break;
                 }      
-                // console.log(data.color)  
 
                 data.username = username;
                 data.numOfRepo = res.data.public_repos;
@@ -70,20 +64,17 @@ function init() {
                 data.company = res.data.company
                 data.bio = res.data.bio
 
-                axios // Requires a different axios call to get stars
+                axios 
                     .get(`https://api.github.com/users/${username}/repos?per_page=100`)
                     .then((res) => {
-                        // console.log(res)
                         data.stars = 0;
-                        for (let i = 0; i < res.data.length; i++) { // Loop through each repository and count the number of stars
+                        for (let i = 0; i < res.data.length; i++) {
                             data.stars += res.data[i].stargazers_count;
                         }
                         
 
-                        // console.log(data.stars)
 
                         let resumeHTML = generateHTML(data);
-                        // console.log(resumeHTML)
 
                         conversion({ html: resumeHTML }, function(err, result) {
                             if (err) {
@@ -109,30 +100,29 @@ function init() {
 init();
 
 const colors = [ 
-   { // Green
+   { 
       wrapperBackground: "#c1e3c5",
-      headerBackground: "#C1C72C",
-      headerColor: "black",
-      photoBorderColor: "#black"
+      headerBackground: "#7BD71D",
+      headerColor: "#FFFFFF",
+      photoBorderColor: "#000000"
     },
-    { // Blue
+    { 
       wrapperBackground: "#5F64D3",
       headerBackground: "#26175A",
-      headerColor: "white",
-      photoBorderColor: "#73448C"
+      headerColor: "#FFFFFF",
+      photoBorderColor: "000000"
     },
     {
-     // Pink
-      wrapperBackground: "#879CDF",
-      headerBackground: "#FF8374",
-      headerColor: "white",
-      photoBorderColor: "#FEE24C"
+      wrapperBackground: "#CF177B",
+      headerBackground: "#CF17E6",
+      headerColor: "#FFFFFF",
+      photoBorderColor: "#000000"
     },
-    { // Red
-      wrapperBackground: "#DE9967",
-      headerBackground: "#870603",
-      headerColor: "white",
-      photoBorderColor: "white"
+    { 
+      wrapperBackground: "#CFA813",
+      headerBackground: "#CF2913",
+      headerColor: "#FFFFFF",
+      photoBorderColor: "#000000"
     }
 ];
   
@@ -217,7 +207,7 @@ const colors = [
            border-radius: 50%;
            object-fit: cover;
            margin-top: -75px;
-           border: 6px solid ${colors[data.color].photoBorderColor};
+           border: 2px solid ${colors[data.color].photoBorderColor};
            box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
            }
            .photo-header h1, .photo-header h2 {
