@@ -22,6 +22,7 @@
     "electron": "^7.1.9",
     "electron-html-to": "^2.6.0",
     "electron-pdf": "^4.0.8",
+    "electron-process-manager": "^1.0.0",
     "inquirer": "^7.0.3"
   }
 }

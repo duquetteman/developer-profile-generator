@@ -3,8 +3,6 @@ const axios = require("axios");
 const inquirer = require("inquirer");
 const convertFactory = require('electron-html-to');
 
-// const generateHTML = require('./generateHTML.js')
-
 var conversion = convertFactory({
     converterPath: convertFactory.converters.PDF
   });
