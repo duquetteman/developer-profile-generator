@@ -2,15 +2,10 @@
 
 A command-line application that dynamically generates a PDF profile from a GitHub username. The application can be invoked with the following command:
 
-```sh
 node index.js
-```
-AS A product manager
 
-I WANT a developer profile generator
-
-SO THAT I can easily prepare reports for stakeholders
-```
+## Instructions
+Clone the repo to a local directory, open in terminal, run npm install, then run node index.js to start the application. The genereated pdf will be placed in the root directory.
 
 ## Business Context
 
@@ -18,11 +13,7 @@ When preparing a report for stakeholders, it is important to have up-to-date inf
 
 
 ```
-GIVEN the developer has a GitHub profile
-
-WHEN prompted for the developer's GitHub username and favorite color
-
-THEN a PDF profile is generated
+Given the developer has a GitHub profile, when prompted for the developer's GitHub username and favorite color, a PDF profile is generated.
 ```
 - - -
 ![Demo](example.gif)
