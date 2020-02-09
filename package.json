@@ -19,7 +19,7 @@
   "homepage": "https://github.com/duquetteman/developer-profile-generator#readme",
   "dependencies": {
     "axios": "^0.19.1",
-    "electron": "^7.1.9",
+    "electron": "^5.0.13",
     "electron-html-to": "^2.6.0",
     "electron-pdf": "^4.0.8",
     "electron-process-manager": "^1.0.0",
